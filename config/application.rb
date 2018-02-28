@@ -26,7 +26,5 @@ module FourOnTheFloor
         resource '*', headers: :any, methods: :any
       end
     end
-
-    config.middleware.use Rack::SslEnforcer, except: '/heartbeat', only_environments: 'production'
   end
 end
