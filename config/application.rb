@@ -15,9 +15,7 @@ module FourOnTheFloor
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.autoload_paths += Dir["#{Rails.root}/lib"] + Dir["#{Rails.root}/app"]
-
-    config.eager_load_paths = []
+    config.autoload_paths += Dir["#{Rails.root}/lib"]
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
