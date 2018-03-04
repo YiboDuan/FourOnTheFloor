@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  resources :users
+  get    '/dashboard', to: 'dashboard#index'
+  get    '/instagram_authorize', to: 'dashboard#instagram_authorize'
+  get    '/instagram_redirect', to: 'sessions#instagram_redirect'
 end
