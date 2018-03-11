@@ -30,18 +30,27 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'haml'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'haml-rails'
 
 gem 'grape'
 
 gem 'rack-ssl-enforcer'
 gem 'rack-cors', :require => 'rack/cors'
 
+# interactors
 gem 'verbalize'
 
+# env vars in .env file
 gem 'dotenv'
+
+# encryption in the db
 gem 'bcrypt'
+
+# http calls made simple
 gem 'faraday'
 
 group :development, :test do

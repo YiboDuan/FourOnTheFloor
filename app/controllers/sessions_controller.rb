@@ -18,16 +18,16 @@ class SessionsController < ApplicationController
   def destroy
   end
 
-  def instagram_redirect
+  def facebook_redirect
     result = OAuth::RequestAccessToken.call(code: params[:code])
     if result.failed?
-      # handle failure!
+      Rails.logger.error("failed to request access token: #{result.failure}")
       return
     end
 
-    response_body = JSON.parse(result.value.body)
-    store_instagram_token(response_body['access_token'])
-
+    response_body = result.value
+    store_facebook_token(response_body[:access_token])
+    # make cookie expire in: response_body['expires_in']
     redirect_to dashboard_path
   end
 end

@@ -1,4 +1,4 @@
-require_dependency 'oauth/assemble_access_code_url'
+require_dependency 'oauth/build_facebook_login_url'
 
 class DashboardController < ApplicationController
   def index
@@ -7,6 +7,8 @@ class DashboardController < ApplicationController
       return
     end
 
-    @instagram_access_code_url = OAuth::AssembleAccessCodeUrl.call.value
+    state_param = SecureRandom.uuid
+    session[:state_nonce] = state_param
+    @facebook_access_code_url = OAuth::BuildFacebookLoginUrl.call!(state_param: state_param)
   end
 end

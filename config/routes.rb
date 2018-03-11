@@ -10,6 +10,5 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get    '/dashboard', to: 'dashboard#index'
-  get    '/instagram_authorize', to: 'dashboard#instagram_authorize'
-  get    '/instagram_redirect', to: 'sessions#instagram_redirect'
+  get    '/facebook_redirect', to: 'sessions#facebook_redirect'
 end

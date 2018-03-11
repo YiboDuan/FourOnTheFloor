@@ -11,11 +11,11 @@ module SessionsHelper
     !current_user.nil?
   end
 
-  def instagram_authorized?
-    !!session[:instagram_access_token]
+  def facebook_authorized?
+    !!session[:facebook_access_token]
   end
 
-  def store_instagram_token(token)
-    session[:instagram_access_token] = token
+  def store_facebook_token(token)
+    session[:facebook_access_token] = token
   end
 end
