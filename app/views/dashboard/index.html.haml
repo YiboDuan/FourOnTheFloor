@@ -3,7 +3,6 @@
 .row
   .col-md-6.col-md-offset-3
     - if facebook_authorized?
-      %p You're logged in!!
-      %p= session[:facebook_access_token]
+      = react_component('Dashboard', { influencers: @influencers })
     - else
       = link_to "Log in to Facebook", @facebook_access_code_url, class: "btn btn-primary"
