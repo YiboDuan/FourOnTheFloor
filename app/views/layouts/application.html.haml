@@ -13,5 +13,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application'
   %body
-    = yield
-    = debug(params) if Rails.env.development?
+    .container-fluid.text-center
+      = yield
+      / = debug(params) if Rails.env.development?
+      %footer{:class => 'footer'}
+        .container
+          %nav
+            %ul
+              %li
+                = link_to 'About Us', '/no_where'
+          .copyright
+            &copy;
+            :javascript
+              document.write(new Date().getFullYear())

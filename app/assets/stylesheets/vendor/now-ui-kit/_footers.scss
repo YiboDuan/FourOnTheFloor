@@ -1,9 +1,8 @@
 .footer{
     padding: 24px 0;
-
-    &.footer-default{
-        background-color: #f2f2f2;
-    }
+    background-color: $color-theme5;
+    height: 50%;
+    color: $white-color;
 
     nav{
         display: inline-block;
@@ -27,6 +26,7 @@
 
                 &:hover{
                     text-decoration: none;
+                    text-shadow: 1px 1px #a8a8a8;
                 }
             }
         }
